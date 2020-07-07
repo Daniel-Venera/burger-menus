@@ -46,21 +46,43 @@ h3 {
 /* Nav */
 
 nav {
-  background-color: black;
   padding: 10px 40px;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 nav ul {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 nav ul li {
   font-size: 32px;
 }
 
+#burgerMenuContainer {
+  background-color: #873D3D;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #burgerMenu {
   cursor: pointer;
+}
+
+@keyframes pump {
+  0%, 40%, 100% {
+    transform: scale(1);
+  }
+  25%, 60% {
+    transform: scale(1.1);
+  }
 }
 
 /* Banner */
@@ -100,13 +122,45 @@ select:hover {
   color: var(--primaryColor);
 }
 
-select option:hover {
-  box-shadow: 0 0 10px 10px #e1358f inset;
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
 }
 
 /* Modal */
 
-.modal {
+.navigation-container {
   z-index: 1;
   height: 100vh;
   width: 100vw;
@@ -120,28 +174,37 @@ select option:hover {
   display: none;
 }
 
-.modal-content li {
+.navigation-content {
+  background-color: var(--primaryColor);
+}
+
+.navigation-content li {
   margin-bottom: 20px;
   cursor: pointer;
 }
 
 #closeBtn {
   position: absolute;
-  top: 0;
+  top: 2px;
   right: 3vw;
   cursor: pointer;
 }
 
-/* Modal Classic */
+/* Classic */
 
-.modal-classic {
+.classic {
   background-color: var(--primaryColor);
 }
 
-/* Modal Cheese */
+/* Cheese */
 
-.modal-cheese .modal-content {
-  background-color: var(--primaryColor);
+.cheese {
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: unset;
+  justify-content: flex-end;
+}
+
+.cheese .navigation-content {
   position: absolute;
   height: 100vh;
   width: 30vw;
@@ -150,11 +213,11 @@ select option:hover {
   justify-content: center;
 }
 
-.modal-cheese .modal-content, .modal-cheese #closeBtn {
-  animation: slide 0.7s ease-in-out;
+.cheese .navigation-content, .cheese #closeBtn {
+  animation: cheese 0.7s ease-in-out;
 }
 
-@keyframes slide {
+@keyframes cheese {
   0% {
     transform: translateX(30vw);
   }
@@ -163,14 +226,59 @@ select option:hover {
   }
 }
 
-.modal-cheese {
-  background-color: rgba(0, 0, 0, 0.5);
-  align-items: unset;
-  justify-content: flex-end;
+/* Extra-Pickle */
+
+.extra-pickle {
+  height: auto;
+}
+
+.extra-pickle .navigation-content ul {
+  display: flex;
+}
+
+.extra-pickle .navigation-content {
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding: 10px 0px 10px 30px;
+}
+
+.extra-pickle .navigation-content ul li {
+  margin: 0px 30px;
+  font-size: 32px;
+}
+
+.extra-pickle, .extra-pickle #closeBtn {
+  animation: extra-pickle-enter 0.7s ease-in-out;
+}
+
+@keyframes extra-pickle-enter {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes extra-pickle-end {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .extra-pickle {
+    visibility: hidden;
+  }
 }
 
 @media screen and (max-width: 769px) {
-  .modal-cheese .modal-content {
+  .cheese .navigation-content {
     width: 50vw;
   }
 }
@@ -188,8 +296,12 @@ select option:hover {
   select {
     width: 70%;
   }
-  .modal-cheese .modal-content {
+  .cheese .navigation-content {
     width: 70vw;
     font-size: 2rem;
+  }
+  #burgerMenuContainer {
+    height: 30px;
+    width: 30px;
   }
 }

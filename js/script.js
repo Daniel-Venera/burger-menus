@@ -2,31 +2,39 @@ let log = console.log;
 
 let burgerMenu = document.getElementById("burgerMenu");
 let select = document.getElementById("selectBurger");
+let burgerMenuContainer = document.getElementById("burgerMenuContainer");
 let burgerChosen;
 
 select.addEventListener("change", function () {
-  modal.classList.remove(burgerChosen);
+  navigationContainer.classList.remove(burgerChosen);
   burgerChosen = select.value;
-  modal.classList.add(burgerChosen);
+  navigationContainer.classList.add(burgerChosen);
+  burgerMenuContainer.style.animation = "pump 1s 1";
 });
 
-// Modal Classic
+// navigationContainer
 
-let modal = document.querySelector(".modal");
+let navigationContainer = document.querySelector(".navigation-container");
 let closeBtn = document.getElementById("closeBtn");
 
 burgerMenu.addEventListener("click", function () {
+  burgerMenu.style.animation = "";
   if (burgerChosen != undefined) {
-    modal.style.display = "flex";
+    navigationContainer.style.display = "flex";
+  } else if (!select.style.animation) {
+    select.style.animation = "shake 0.7s";
+    setTimeout(function () {
+      select.style.animation = "";
+    }, 800);
   }
 });
 
 closeBtn.addEventListener("click", function () {
-  modal.style.display = "none";
+  navigationContainer.style.display = "none";
 });
 
 document.addEventListener("click", function (e) {
-  if (e.target && e.target.classList.contains("modal-cheese")) {
+  if (e.target && e.target.classList.contains("cheese")) {
     e.target.style.display = "none";
   }
 });
