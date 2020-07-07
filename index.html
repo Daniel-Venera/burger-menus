@@ -6,13 +6,15 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <meta property="og:image" content="https://images.pexels.com/photos/908849/pexels-photo-908849.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
     <title>Burger Menus</title>
   </head>
   <body>
     <nav>
       <ul>
         <li>Daniel's</li>
-        <li><i class="fa fa-bars modal-chosen" aria-hidden="true" id="burgerMenu"></i></li>
+        <li><i class="fa fa-bars" aria-hidden="true" id="burgerMenu"></i></li>
       </ul>
     </nav>
     <div class="banner">
@@ -20,7 +22,9 @@
         <h2>Burger Menus</h2>
         <h3>100% HTML / CSS / JS</h3>
         <select name="burger" id="selectBurger">
-          <option value="modal">Modal Veggie Classic</option>
+          <option selected disabled>-- Select Your Burger</option>
+          <option value="modal-classic">Modal Classic</option>
+          <option value="modal-cheese">Modal Cheese</option>
         </select>
         <p>More options available soon !</p>
       </div>

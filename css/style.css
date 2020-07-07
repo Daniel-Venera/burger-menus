@@ -48,7 +48,6 @@ h3 {
 nav {
   background-color: black;
   padding: 10px 40px;
-  /* height: 60px; */
 }
 
 nav ul {
@@ -81,7 +80,7 @@ nav ul li {
 
 select {
   height: 50px;
-  width: 80%;
+  width: 50%;
   font-size: 18px;
   margin-bottom: 10px;
   padding: 10px 0px 10px 10px;
@@ -89,17 +88,26 @@ select {
   background-color: var(--primaryColor);
   color: white;
   cursor: pointer;
+  -webkit-appearance: none;
 }
 
 select:focus {
   outline: none;
 }
 
+select:hover {
+  background-color: white;
+  color: var(--primaryColor);
+}
+
+select option:hover {
+  box-shadow: 0 0 10px 10px #e1358f inset;
+}
+
 /* Modal */
 
 .modal {
-  z-index: 2;
-  background-color: var(--primaryColor);
+  z-index: 1;
   height: 100vh;
   width: 100vw;
   position: absolute;
@@ -113,7 +121,7 @@ select:focus {
 }
 
 .modal-content li {
-  margin: 10px;
+  margin-bottom: 20px;
   cursor: pointer;
 }
 
@@ -122,6 +130,49 @@ select:focus {
   top: 0;
   right: 3vw;
   cursor: pointer;
+}
+
+/* Modal Classic */
+
+.modal-classic {
+  background-color: var(--primaryColor);
+}
+
+/* Modal Cheese */
+
+.modal-cheese .modal-content {
+  background-color: var(--primaryColor);
+  position: absolute;
+  height: 100vh;
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-cheese .modal-content, .modal-cheese #closeBtn {
+  animation: slide 0.7s ease-in-out;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(30vw);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.modal-cheese {
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: unset;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 769px) {
+  .modal-cheese .modal-content {
+    width: 50vw;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -133,5 +184,12 @@ select:focus {
   }
   nav ul li {
     font-size: 1rem;
+  }
+  select {
+    width: 70%;
+  }
+  .modal-cheese .modal-content {
+    width: 70vw;
+    font-size: 2rem;
   }
 }
