@@ -4,9 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>Burger Menus</title>
   </head>
   <body>
+    <nav>
+      <ul>
+        <li>Daniel's</li>
+        <li><i class="fa fa-bars" aria-hidden="true"></i></li>
+      </ul>
+    </nav>
+    <div class="banner">
+      <div class="banner-container">
+        <h2>Daniel's Burger Menus</h2>
+        <h3>100% HTML / CSS / JS</h3>
+        <form action="/" method="GET">
+          <select name="burger" id="select-burger">
+            <option value="none"> Select a burger</option>
+            <option value="modal-classic">Modal classic</option>
+          </select>
+          <button id="order">Order</button>
+        </form>
+        <p>More options available soon !</p>
+      </div>
+    </div>
     <script src="./js/script.js"></script>
   </body>
 </html>
