@@ -8,6 +8,7 @@
 body {
   height: 100vh;
   overflow: hidden;
+  color: white;
 }
 
 body, select, button {
@@ -27,7 +28,11 @@ button {
   border: none;
   padding: 15px;
   font-size: 18px;
-  color: white;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
 }
 
 h3 {
@@ -38,7 +43,6 @@ h3 {
 
 nav {
   background-color: black;
-  color: white;
   padding: 10px 40px;
   /* height: 60px; */
 }
@@ -52,6 +56,14 @@ nav ul li {
   font-size: 32px;
 }
 
+#burgerMenu {
+  cursor: pointer;
+}
+
+.modal-chosen {
+  color: green;
+}
+
 /* Banner */
 
 .banner {
@@ -59,7 +71,6 @@ nav ul li {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/burger.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,29 +80,58 @@ nav ul li {
 /* Form */
 
 form {
-  /* background-color: tomato; */
+  margin-bottom: 10px;
 }
 
 select {
   height: 50px;
-  width: 30%;
-  background-color: white;
+  width: 80%;
   font-size: 18px;
   padding: 10px 0px 10px 10px;
+  border: none;
 }
 
 select:focus {
   outline: none;
 }
 
-@media screen and (max-width: 768px) {
+/* Modal */
+
+.modal {
+  z-index: 2;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  top: 0;
+  font-size: 3rem;
+  display: none;
+}
+
+.modal-content li {
+  margin: 10px;
+  cursor: pointer;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 0;
+  right: 3vw;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
   h2 {
+    font-size: 3rem;
+  }
+  h3 {
     font-size: 2rem;
   }
-  h3, nav ul li {
+  nav ul li {
     font-size: 1rem;
-  }
-  select {
-    width: 50%;
   }
 }

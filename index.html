@@ -12,22 +12,32 @@
     <nav>
       <ul>
         <li>Daniel's</li>
-        <li><i class="fa fa-bars" aria-hidden="true"></i></li>
+        <li><i class="fa fa-bars modal-chosen" aria-hidden="true" id="burgerMenu"></i></li>
       </ul>
     </nav>
     <div class="banner">
       <div class="banner-container">
-        <h2>Daniel's Burger Menus</h2>
+        <h2>Burger Menus</h2>
         <h3>100% HTML / CSS / JS</h3>
-        <form action="/" method="GET">
-          <select name="burger" id="select-burger">
-            <option value="none"> Select a burger</option>
-            <option value="modal-classic">Modal classic</option>
+        <form action="/" method="GET" id="chooseBurger">
+          <select name="burger" id="selectBurger">
+            <option value="modal">Modal classic</option>
           </select>
-          <button id="order">Order</button>
         </form>
         <p>More options available soon !</p>
       </div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <ul>
+          <li>Mushrooms</li>
+          <li>Pinto Beans</li>
+          <li>Onions</li>
+          <li>Salad</li>
+          <li>Pickles</li>
+        </ul>
+      </div>
+      <div id="closeBtn"><i class="fa fa-times" aria-hidden="true"></i></div>
     </div>
     <script src="./js/script.js"></script>
   </body>
