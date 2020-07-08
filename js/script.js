@@ -6,54 +6,47 @@ let burgerMenuContainer = document.getElementById("burgerMenuContainer");
 let burgerChosen;
 
 select.addEventListener("change", function () {
-  // navigationContainer.style.display = "none";
   if (burgerMenu.classList.contains("fa-times")) {
     burgerMenu.classList.remove("fa-times");
     burgerMenu.classList.add("fa-bars");
   }
-  navigationContainer.classList.remove(burgerChosen);
+  navigationContent.classList.remove(burgerChosen);
   burgerChosen = select.value;
-  navigationContainer.classList.add(burgerChosen);
+  navigationContent.classList.add(burgerChosen);
   burgerMenuContainer.style.animation = "pump 1.4s";
   animationDisplay(burgerMenuContainer, 1400);
 });
 
-// navigationContainer
+// navigationContent
 
-let navigationContainer = document.querySelector(".navigation-container");
+let navigationContent = document.querySelector(".navigation-content");
 let closeBtn = document.getElementById("closeBtn");
-let count = 100;
-
+log(navigationContent);
 burgerMenu.addEventListener("click", function () {
-  log(navigationContainer);
   if (burgerChosen != undefined) {
-    navigationContainer.style.display = "flex";
+    navigationContent.style.display = "flex";
     if (burgerChosen == "extra-onion") {
       burgerMenuDisplay();
     }
-  } else if (!select.style.animation) {
+  } else {
     select.style.animation = "shake 0.7s";
     animationDisplay(select, 700);
   }
-
-  if (navigationContainer.classList.contains("classic")) {
-    log("oui");
-    navigationContainer.style.transform = "translateY(100vh)";
-    count = 0;
+  // Choices
+  if (navigationContent.classList.contains("classic")) {
+    navigationContent.style.transform = "translateY(100vh)";
   }
-  log(navigationContainer);
-
-  // burgerMenu.style.animation = "";
+  if (navigationContent.classList.contains("cheese")) {
+    navigationContent.style.transform = "translateX(-65vw)";
+  }
 });
 
 closeBtn.addEventListener("click", function () {
-  if (navigationContainer.classList.contains("classic")) {
-    navigationContainer.style.transform = "translateY(0)";
+  if (burgerChosen == "classic" || burgerChosen == "cheese") {
+    navigationContent.style.transform = "translate(0,0)";
+  } else {
+    navigationContent.style.display = "none";
   }
-
-  // setTimeout(function () {
-  //   navigationContainer.style.display = "none";
-  // }, 700);
 });
 
 document.addEventListener("click", function (e) {
@@ -70,11 +63,13 @@ function animationDisplay(target, delay) {
   }, delay);
 }
 
+// Burger Menu Display
+
 function burgerMenuDisplay() {
   if (burgerMenu.classList.contains("fa-times")) {
     burgerMenu.classList.remove("fa-times");
     burgerMenu.classList.add("fa-bars");
-    navigationContainer.style.display = "none";
+    navigationContent.style.display = "none";
   } else {
     burgerMenu.classList.remove("fa-bars");
     burgerMenu.classList.add("fa-times");
