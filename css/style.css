@@ -163,7 +163,7 @@ select:hover {
   }
 }
 
-/* Modal */
+/* Navigation */
 
 .navigation-container {
   z-index: 1;
@@ -198,6 +198,7 @@ select:hover {
 /* Classic */
 
 .classic {
+  display: none;
   background-color: var(--primaryColor);
 }
 
@@ -247,9 +248,9 @@ select:hover {
 
 /* Extra-Pickle */
 
-.extra-pickle {
+/* .extra-pickle {
   height: auto;
-}
+} */
 
 .extra-pickle .navigation-content ul {
   display: flex;
@@ -291,8 +292,54 @@ select:hover {
   }
 }
 
+/* Extra-Onion */
+
+.extra-onion {
+  display: none;
+  height: auto;
+  z-index: 0;
+}
+
+.extra-onion .navigation-content ul {
+  display: flex;
+  justify-content: center;
+}
+
+.extra-onion .navigation-content {
+  height: 70px;
+  width: 100vw;
+  position: absolute;
+  top: 70px;
+  padding: 10px 0px 10px 30px;
+  overflow: hidden;
+  animation: extra-onion 0.7s ease-in-out;
+}
+
+.extra-onion .navigation-content ul li {
+  padding: 10px 0px;
+  margin: 0px 30px;
+  font-size: 32px;
+}
+
+.extra-onion #closeBtn {
+  display: none;
+}
+
+@keyframes extra-onion {
+  0% {
+    height: 5px;
+    transform: translateX(100vw);
+  }
+  40% {
+    transform: translateX(0px);
+  }
+}
+
+/* Responsive */
+
 @media screen and (max-width: 1025px) {
-  .extra-pickle {
+  .extra-pickle,
+  .extra-onion {
     visibility: hidden;
   }
 }
