@@ -218,9 +218,8 @@ select:hover {
 .extra-pickle {
   right: -100vw;
   top: 0;
-  height: 60px;
+  height: 80px;
   width: 100vw;
-  /* left: 0; */
 }
 
 .extra-pickle ul li {
