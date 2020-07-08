@@ -174,7 +174,7 @@ select:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 3rem;
+  font-size: 4rem;
   /* display: none; */
 }
 
@@ -211,27 +211,24 @@ select:hover {
 
 /* Extra-Pickle */
 
-/* .extra-pickle {
-  height: auto;
-} */
-
-.extra-pickle .navigation-content ul {
+.extra-pickle ul {
   display: flex;
 }
 
-.extra-pickle .navigation-content {
-  height: 60px;
-  width: 100%;
-  position: absolute;
+.extra-pickle {
+  right: -100vw;
   top: 0;
-  padding: 10px 0px 10px 30px;
+  height: 60px;
+  width: 100vw;
+  /* left: 0; */
 }
 
-.extra-pickle .navigation-content ul li {
+.extra-pickle ul li {
   margin: 0px 30px;
   font-size: 32px;
 }
 
+/* 
 .extra-pickle,
 .extra-pickle #closeBtn {
   animation: extra-pickle-enter 0.7s ease-in-out;
@@ -253,24 +250,19 @@ select:hover {
   100% {
     transform: translateX(100vw);
   }
-}
+} */
 
 /* Extra-Onion */
 
-.extra-onion ul {
+/* .extra-onion ul {
   display: flex;
   justify-content: center;
-}
+} */
 
 .extra-onion {
-  display: none;
-  height: auto;
-  z-index: 0;
   height: 70px;
   width: 100vw;
-  position: absolute;
   top: 70px;
-  padding: 10px 0px 10px 30px;
   overflow: hidden;
   animation: extra-onion 1.7s ease-in-out;
 }
@@ -323,5 +315,9 @@ select:hover {
   #burgerMenuContainer {
     height: 30px;
     width: 30px;
+  }
+
+  .navigation-content {
+    font-size: 2rem;
   }
 }

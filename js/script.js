@@ -22,35 +22,38 @@ select.addEventListener("change", function () {
 let navigationContent = document.querySelector(".navigation-content");
 let closeBtn = document.getElementById("closeBtn");
 log(navigationContent);
+
 burgerMenu.addEventListener("click", function () {
-  if (burgerChosen != undefined) {
-    navigationContent.style.display = "flex";
-    if (burgerChosen == "extra-onion") {
-      burgerMenuDisplay();
-    }
-  } else {
+  if (burgerChosen == undefined) {
     select.style.animation = "shake 0.7s";
     animationDisplay(select, 700);
   }
   // Choices
-  if (navigationContent.classList.contains("classic")) {
+  if (burgerChosen == "classic") {
     navigationContent.style.transform = "translateY(100vh)";
   }
-  if (navigationContent.classList.contains("cheese")) {
+  if (burgerChosen == "cheese") {
     navigationContent.style.transform = "translateX(-65vw)";
+  }
+  if (burgerChosen == "extra-pickle") {
+    navigationContent.style.transform = "translateX(-100vw)";
+  }
+
+  if (burgerChosen == "extra-onion") {
+    navigationContent.style.animation = "extra-onion 0.7s";
+    burgerMenuDisplay();
+    animationDisplay(navigationContent, 700);
   }
 });
 
 closeBtn.addEventListener("click", function () {
-  if (burgerChosen == "classic" || burgerChosen == "cheese") {
+  if (burgerChosen != "extra-onion") {
     navigationContent.style.transform = "translate(0,0)";
-  } else {
-    navigationContent.style.display = "none";
   }
 });
 
 document.addEventListener("click", function (e) {
-  if (e.target && e.target != burgerMenu && e.target != navigationContent && navigationContent.style.transform === "translateX(-65vw)") {
+  if (e.target && e.target != burgerMenu && e.target != navigationContent) {
     navigationContent.style.transform = "translate(0,0)";
   }
 });
