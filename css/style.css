@@ -257,18 +257,15 @@ select:hover {
 
 /* Extra-Onion */
 
-.extra-onion {
-  display: none;
-  height: auto;
-  z-index: 0;
-}
-
-.extra-onion .navigation-content ul {
+.extra-onion ul {
   display: flex;
   justify-content: center;
 }
 
-.extra-onion .navigation-content {
+.extra-onion {
+  display: none;
+  height: auto;
+  z-index: 0;
   height: 70px;
   width: 100vw;
   position: absolute;
@@ -278,7 +275,7 @@ select:hover {
   animation: extra-onion 1.7s ease-in-out;
 }
 
-.extra-onion .navigation-content ul li {
+.extra-onion ul li {
   padding: 10px 0px;
   margin: 0px 30px;
   font-size: 32px;

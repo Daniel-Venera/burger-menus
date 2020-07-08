@@ -50,8 +50,8 @@ closeBtn.addEventListener("click", function () {
 });
 
 document.addEventListener("click", function (e) {
-  if (e.target && e.target.classList.contains("cheese")) {
-    e.target.style.display = "none";
+  if (e.target && e.target != burgerMenu && e.target != navigationContent && navigationContent.style.transform === "translateX(-65vw)") {
+    navigationContent.style.transform = "translate(0,0)";
   }
 });
 
