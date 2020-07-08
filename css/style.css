@@ -1,5 +1,5 @@
 :root {
-  --primaryColor: #3D8752;
+  --primaryColor: #3d8752;
 }
 
 * {
@@ -15,8 +15,10 @@ body {
   color: white;
 }
 
-body, select, button {
-  font-family: 'Lato', sans-serif;
+body,
+select,
+button {
+  font-family: "Lato", sans-serif;
 }
 
 h2 {
@@ -63,7 +65,7 @@ nav ul li {
 }
 
 #burgerMenuContainer {
-  background-color: #873D3D;
+  background-color: #873d3d;
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -77,11 +79,14 @@ nav ul li {
 }
 
 @keyframes pump {
-  0%, 40%, 100% {
+  0%,
+  40%,
+  100% {
     transform: scale(1);
   }
-  25%, 60% {
-    transform: scale(1.1);
+  25%,
+  60% {
+    transform: scale(1.2);
   }
 }
 
@@ -89,7 +94,7 @@ nav ul li {
 
 .banner {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/burger.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/burger.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -196,6 +201,19 @@ select:hover {
   background-color: var(--primaryColor);
 }
 
+.classic {
+  animation: classic 0.7s ease-in-out;
+}
+
+@keyframes classic {
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 /* Cheese */
 
 .cheese {
@@ -213,7 +231,8 @@ select:hover {
   justify-content: center;
 }
 
-.cheese .navigation-content, .cheese #closeBtn {
+.cheese .navigation-content,
+.cheese #closeBtn {
   animation: cheese 0.7s ease-in-out;
 }
 
@@ -249,7 +268,8 @@ select:hover {
   font-size: 32px;
 }
 
-.extra-pickle, .extra-pickle #closeBtn {
+.extra-pickle,
+.extra-pickle #closeBtn {
   animation: extra-pickle-enter 0.7s ease-in-out;
 }
 

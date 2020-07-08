@@ -9,7 +9,7 @@ select.addEventListener("change", function () {
   navigationContainer.classList.remove(burgerChosen);
   burgerChosen = select.value;
   navigationContainer.classList.add(burgerChosen);
-  burgerMenuContainer.style.animation = "pump 1s 1";
+  burgerMenuContainer.style.animation = "pump 1.4s 1";
 });
 
 // navigationContainer
