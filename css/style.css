@@ -15,9 +15,7 @@ body {
   color: white;
 }
 
-body,
-select,
-button {
+body, select, button {
   font-family: "Lato", sans-serif;
 }
 
@@ -79,13 +77,10 @@ nav ul li {
 }
 
 @keyframes pump {
-  0%,
-  40%,
-  100% {
+  0%, 40%, 100% {
     transform: scale(1);
   }
-  25%,
-  60% {
+  25%, 60% {
     transform: scale(1.2);
   }
 }
@@ -198,11 +193,13 @@ select:hover {
 /* Classic */
 
 .classic {
-  display: none;
+  display: flex;
   background-color: var(--primaryColor);
+  top: -100vh;
+  transition: transform 0.7s;
 }
 
-.classic {
+/* .classic {
   animation: classic 0.7s ease-in-out;
 }
 
@@ -213,7 +210,7 @@ select:hover {
   100% {
     transform: translateY(0px);
   }
-}
+} */
 
 /* Cheese */
 
@@ -232,8 +229,7 @@ select:hover {
   justify-content: center;
 }
 
-.cheese .navigation-content,
-.cheese #closeBtn {
+.cheese .navigation-content, .cheese #closeBtn {
   animation: cheese 0.7s ease-in-out;
 }
 
@@ -269,8 +265,7 @@ select:hover {
   font-size: 32px;
 }
 
-.extra-pickle,
-.extra-pickle #closeBtn {
+.extra-pickle, .extra-pickle #closeBtn {
   animation: extra-pickle-enter 0.7s ease-in-out;
 }
 
@@ -338,8 +333,7 @@ select:hover {
 /* Responsive */
 
 @media screen and (max-width: 1025px) {
-  .extra-pickle,
-  .extra-onion {
+  .extra-pickle, .extra-onion {
     visibility: hidden;
   }
 }

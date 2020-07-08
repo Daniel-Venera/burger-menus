@@ -6,7 +6,7 @@ let burgerMenuContainer = document.getElementById("burgerMenuContainer");
 let burgerChosen;
 
 select.addEventListener("change", function () {
-  navigationContainer.style.display = "none";
+  // navigationContainer.style.display = "none";
   if (burgerMenu.classList.contains("fa-times")) {
     burgerMenu.classList.remove("fa-times");
     burgerMenu.classList.add("fa-bars");
@@ -22,9 +22,10 @@ select.addEventListener("change", function () {
 
 let navigationContainer = document.querySelector(".navigation-container");
 let closeBtn = document.getElementById("closeBtn");
+let count = 100;
 
 burgerMenu.addEventListener("click", function () {
-  burgerMenu.style.animation = "";
+  log(navigationContainer);
   if (burgerChosen != undefined) {
     navigationContainer.style.display = "flex";
     if (burgerChosen == "extra-onion") {
@@ -34,10 +35,25 @@ burgerMenu.addEventListener("click", function () {
     select.style.animation = "shake 0.7s";
     animationDisplay(select, 700);
   }
+
+  if (navigationContainer.classList.contains("classic")) {
+    log("oui");
+    navigationContainer.style.transform = "translateY(100vh)";
+    count = 0;
+  }
+  log(navigationContainer);
+
+  // burgerMenu.style.animation = "";
 });
 
 closeBtn.addEventListener("click", function () {
-  navigationContainer.style.display = "none";
+  if (navigationContainer.classList.contains("classic")) {
+    navigationContainer.style.transform = "translateY(0)";
+  }
+
+  // setTimeout(function () {
+  //   navigationContainer.style.display = "none";
+  // }, 700);
 });
 
 document.addEventListener("click", function (e) {
