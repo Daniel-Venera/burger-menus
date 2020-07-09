@@ -1,5 +1,6 @@
 :root {
   --primaryColor: #3d8752;
+  --secondaryColor: #873d3d;
 }
 
 * {
@@ -16,32 +17,16 @@ body {
 }
 
 body,
-select,
-button {
+select {
   font-family: "Lato", sans-serif;
 }
 
 h2 {
-  font-size: 5rem;
+  font-size: 5em;
 }
 
 h3 {
-  font-size: 3rem;
-}
-
-button {
-  background-color: green;
-  border: none;
-  padding: 15px;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-button:focus {
-  outline: none;
-}
-
-h3 {
+  font-size: 3em;
   margin-bottom: 30px;
 }
 
@@ -61,20 +46,17 @@ nav ul {
 }
 
 nav ul li {
-  font-size: 32px;
+  font-size: 2em;
 }
 
 #burgerMenuContainer {
-  background-color: #873d3d;
+  background-color: var(--secondaryColor);
   height: 50px;
   width: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-#burgerMenu {
   cursor: pointer;
 }
 
@@ -107,8 +89,8 @@ nav ul li {
 
 select {
   height: 50px;
-  width: 50%;
-  font-size: 18px;
+  width: 60%;
+  font-size: 1.5em;
   margin-bottom: 10px;
   padding: 10px 0px 10px 10px;
   border: none;
@@ -174,8 +156,7 @@ select:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 4rem;
-  /* display: none; */
+  font-size: 4em;
 }
 
 .navigation-content li {
@@ -195,128 +176,64 @@ select:hover {
 .classic {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  background-color: var(--primaryColor);
   top: -100vh;
+  --navigationTranslateX: 0;
+  --navigationTranslateY: 100vh;
 }
 
 /* Cheese */
 
 .cheese {
-  right: -65vw;
-  top: 0;
-  height: 100vh;
   width: 65vw;
+  height: 100vh;
+  top: 0;
+  right: -65vw;
+  --navigationTranslateX: -65vw;
+  --navigationTranslateY: 0;
 }
 
 /* Extra-Pickle */
+
+.extra-pickle {
+  width: 100vw;
+  height: 80px;
+  top: 0;
+  right: -100vw;
+  --navigationTranslateX: -100vw;
+  --navigationTranslateY: 0;
+}
 
 .extra-pickle ul {
   display: flex;
 }
 
-.extra-pickle {
-  right: -100vw;
-  top: 0;
-  height: 80px;
-  width: 100vw;
-}
-
 .extra-pickle ul li {
   margin: 0px 30px;
-  font-size: 32px;
-}
-
-/* 
-.extra-pickle,
-.extra-pickle #closeBtn {
-  animation: extra-pickle-enter 0.7s ease-in-out;
-}
-
-@keyframes extra-pickle-enter {
-  0% {
-    transform: translateX(100vw);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes extra-pickle-end {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100vw);
-  }
-} */
-
-/* Extra-Onion */
-
-/* .extra-onion ul {
-  display: flex;
-  justify-content: center;
-} */
-
-.extra-onion {
-  height: 70px;
-  width: 100vw;
-  top: 70px;
-  overflow: hidden;
-  animation: extra-onion 1.7s ease-in-out;
-}
-
-.extra-onion ul li {
-  padding: 10px 0px;
-  margin: 0px 30px;
-  font-size: 32px;
-}
-
-.extra-onion #closeBtn {
-  display: none;
-}
-
-@keyframes extra-onion {
-  0% {
-    height: 5px;
-    transform: translateX(100vw);
-  }
-  40% {
-    transform: translateX(0px);
-  }
+  font-size: 0.5em;
 }
 
 /* Responsive */
 
 @media screen and (max-width: 1025px) {
-  .extra-pickle,
-  .extra-onion {
+  .extra-pickle {
     visibility: hidden;
   }
 }
 
 @media screen and (max-width: 480px) {
   h2 {
-    font-size: 3rem;
+    font-size: 3em;
   }
   h3 {
-    font-size: 2rem;
+    font-size: 2em;
   }
   nav ul li {
-    font-size: 1rem;
+    font-size: 2em;
   }
   select {
-    width: 70%;
+    width: 90%;
   }
-  .cheese {
-    font-size: 2rem;
-  }
-  #burgerMenuContainer {
-    height: 30px;
-    width: 30px;
-  }
-
   .navigation-content {
-    font-size: 2rem;
+    font-size: 2.5em;
   }
 }
